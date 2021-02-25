@@ -1,0 +1,117 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  margin: 0;
+  font-family: "Commissioner", sans-serif;
+  font-size: 15px;
+  background-color: hsl(180, 20%, 96%);
+}
+
+/* -----------------------Start Header----------------------- */
+header {
+  background-image: url("images/image-hero-desktop.jpg");
+  background-size: cover;
+  height: 300px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.header-logo {
+  width: 50%;
+  margin: 5% 10%;
+}
+.header-links {
+  width: 50%;
+  margin: 5% 10%;
+}
+.header-links ul {
+  float: right;
+  margin: 0;
+  list-style: none;
+  color: white;
+}
+.header-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+.header-links li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* -----------------------End Header----------------------- */
+
+/* -----------------------Start Body----------------------- */
+.container {
+  margin: auto 25%;
+}
+
+.card {
+  background-color: white;
+  padding: 5%;
+  margin: 20px 0;
+}
+
+.first-card {
+  text-align: center;
+}
+.first-card .card-header {
+  font-size: x-large;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+.text {
+  color: rgb(167, 167, 167);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+button {
+  background-color: hsl(176, 50%, 47%);
+  color: white;
+  font-weight: bold;
+  padding: 0px 6%;
+  border: none;
+  border-radius: 100px;
+}
+
+button:hover {
+  background-color: hsl(176, 72%, 28%);
+}
+
+.bookmark-btn {
+  background-color: hsl(0, 0%, 48%);
+  text-align: center;
+  padding: 0 6% 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.bookmark {
+  background-color: #f4f4f4;
+  color: hsl(0, 0%, 48%);
+}
+
+.bookmarked {
+  visibility: hidden;
+  background-color: hsl(170, 25%, 95%);
+  color: hsl(176, 72%, 28%);
+}
+
+.bookmarked span {
+  /* padding: 0px 6%; */
+}
+
+/* -----------------------End Body----------------------- */
