@@ -34,7 +34,10 @@ header {
   margin: 5% 10%;
 }
 .header-links ul {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: row wrap;
+
   margin: 0;
   list-style: none;
   color: white;
@@ -52,13 +55,14 @@ header {
 
 /* -----------------------Start Body----------------------- */
 .container {
-  margin: auto 25%;
+  width: 50%;
 }
 
 .card {
   background-color: white;
   padding: 5%;
   margin: 20px 0;
+  border: unset;
 }
 
 .first-card {
@@ -68,9 +72,21 @@ header {
   font-size: x-large;
   font-weight: bolder;
   margin-bottom: 0;
+  background-color: unset;
+  border-bottom: unset;
+}
+
+.number{
+    font-size: x-large;
+    font-weight: 700;
+    color: black;
 }
 .text {
   color: rgb(167, 167, 167);
+}
+
+.first-card .text{
+    margin-bottom: -1rem;
 }
 
 .buttons {
@@ -91,6 +107,7 @@ button:hover {
   background-color: hsl(176, 72%, 28%);
 }
 
+/* -----------------------Slider----------------------- */
 
 #button-background {
   position: relative;
@@ -148,4 +165,43 @@ button:hover {
 .bottom a {
   color: white;
 }
+/* -----------------------End Slider----------------------- */
+
+
+.second-card .data{
+    display: flex;
+    justify-content:space-between;
+    flex-flow: row wrap;
+}
+
+.second-card .data div {
+    padding-right: 10%;
+}
+
+.second-card .data div:nth-child(1){
+    border-right: solid 1px gray;
+}
+.second-card .data div:nth-child(2){
+    border-right: solid 1px gray;
+}
+
+
+.progress {
+    height: 10px;
+
+}
+.progress-bar{
+    width: calc(89914/100000*100%);
+    background-color:hsl(176, 50%, 47%);
+}
+
+
+
+
+
+
+
+
+
+
 /* -----------------------End Body----------------------- */
