@@ -1,57 +1,64 @@
 var initialMouse = 0;
 var slideMovementTotal = 0;
 var mouseIsDown = false;
-var slider = $('#slider');
+var bookmarkButton = $("#button-background");
+var slider = $("#slider");
+var selectRewardBtn = $("#select-reward");
+var radioChecked = $(".form-check-input");
+var valueChecked = $('input:radio[name="flexRadioDefault"]');
 
-slider.on('mousedown touchstart', function(event){
-	mouseIsDown = true;
-	slideMovementTotal = $('#button-background').width() - $(this).width() + 10;
-	initialMouse = event.clientX || event.originalEvent.touches[0].pageX;
+selectRewardBtn.on("click", function (event) {
+  console.log("sdf");
+  document
+    .getElementById("select-reward")
+    .setAttribute("data-bs-toggle", "modal");
+  document
+    .getElementById("select-reward")
+    .setAttribute("data-bs-target", "#staticBackdrop");
 });
 
-$(document.body, '#slider').on('mouseup touchend', function (event) {
-	if (!mouseIsDown)
-		return;
-	mouseIsDown = false;
-	var currentMouse = event.clientX || event.changedTouches[0].pageX;
-	var relativeMouse = currentMouse - initialMouse;
-	if (relativeMouse < slideMovementTotal) {
-		$('.slide-text').fadeTo(300, 1);
-		slider.animate({
-			left: "-10px"
-		}, 300);
-		return;
-	}
-	slider.addClass('unlocked');
-    $('#locker').html('<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="white" d="M23 19v18l5-5.058L33 37V19z"/></g></svg> <span class="slide-text">Bookmarked</span>');
-	setTimeout(function(){
-		slider.on('click tap', function(event){
-			if (!slider.hasClass('unlocked'))
-				return;
-			slider.removeClass('unlocked');
-			$('#locker').html('<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>');
-			slider.off('click tap');
-		});
-	}, 0);
+bookmarkButton.on("click", function (event) {
+  // console.log(slider.classList)
+
+  if (!slider.hasClass("bookmarked")) {
+    slider.addClass("bookmarked");
+    console.log("bookmarked");
+    document
+      .getElementById("button-background")
+      .setAttribute("data-toggle", "modal");
+    document
+      .getElementById("button-background")
+      .setAttribute("data-target", "#myModal");
+    $("#locker").html(
+      '<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="white" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>'
+    );
+  } else {
+    slider.removeClass("bookmarked");
+    document
+      .getElementById("button-background")
+      .removeAttribute("data-toggle", "modal");
+    document
+      .getElementById("button-background")
+      .removeAttribute("data-target", "#myModal");
+    $("#locker").html(
+      '<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>'
+    );
+
+    console.log("bookmark");
+  }
 });
 
-$(document.body).on('mousemove touchmove', function(event){
-	if (!mouseIsDown)
-		return;
 
-	var currentMouse = event.clientX || event.originalEvent.touches[0].pageX;
-	var relativeMouse = currentMouse - initialMouse;
-	var slidePercent = 1 - (relativeMouse / slideMovementTotal);
-
-	$('.slide-text').fadeTo(0, slidePercent);
-
-	if (relativeMouse <= 0) {
-		slider.css({'left': '-10px'});
-		return;
-	}
-	if (relativeMouse >= slideMovementTotal + 10) {
-		slider.css({'left': slideMovementTotal + 'px'});
-		return;
-	}
-	slider.css({'left': relativeMouse - 10});
+valueChecked.change(function () {
+	$("#flexRadioDefault1").parent().parent().removeClass("radio-checked");
+	$("#flexRadioDefault2").parent().parent().removeClass("radio-checked");
+	$("#flexRadioDefault3").parent().parent().removeClass("radio-checked");
+  if ($(this).is(":checked") && $(this).prop("id") === "flexRadioDefault1") {
+    $("#flexRadioDefault1").parent().parent().addClass("radio-checked");
+  } if ($(this).is(":checked") && $(this).prop("id") === "flexRadioDefault2") {
+    $("#flexRadioDefault2").parent().parent().addClass("radio-checked");
+  } if ($(this).is(":checked") && $(this).prop("id") === "flexRadioDefault3") {
+    $("#flexRadioDefault3").parent().parent().addClass("radio-checked");
+  }
 });
+

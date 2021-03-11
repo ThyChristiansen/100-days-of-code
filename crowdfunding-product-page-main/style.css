@@ -17,7 +17,7 @@ body {
 header {
   background-image: url("images/image-hero-desktop.jpg");
   background-size: cover;
-  height: 300px;
+  height: 350px;
   margin: 0;
   display: flex;
   flex-direction: row;
@@ -58,7 +58,9 @@ header {
   width: 50%;
 }
 
-.card {
+.first-card,
+.second-card,
+.third-card {
   background-color: white;
   padding: 5%;
   margin: 20px 0;
@@ -76,23 +78,29 @@ header {
   border-bottom: unset;
 }
 
-.number{
-    font-size: x-large;
-    font-weight: 700;
-    color: black;
+.title {
+  font-weight: bolder;
+}
+
+.number {
+  font-size: x-large;
+  font-weight: 700;
+  color: black;
 }
 .text {
   color: rgb(167, 167, 167);
 }
 
-.first-card .text{
-    margin-bottom: -1rem;
+.first-card .text {
+  margin-bottom: -1rem;
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+  flex-flow: row wrap;
+
 }
 button {
   background-color: hsl(176, 50%, 47%);
@@ -125,35 +133,40 @@ button:hover {
   transition: width 0.3s, border-radius 1s, height 0.3s;
   position: absolute;
   left: -10px;
-  background-color:#6d6d6d;
+  background-color: #6d6d6d;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
-#slider.unlocked {
+#slider.bookmarked {
   transition: all 0.3s;
-  width: inherit;
-  left: 0 !important;
-  height: inherit;
-  border-radius: inherit;
-  background-color:hsl(176, 72%, 28%);
-
+  background-color: hsl(176, 72%, 28%);
+  position: absolute;
+  left: -10px;
+    width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.material-icons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+.material-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .slide-text {
-
   font-size: 16px;
+}
+.slide-text.bookmarked {
+  font-size: 16px;
+  color:red
 }
 
 .bottom {
@@ -167,37 +180,78 @@ button:hover {
 }
 /* -----------------------End Slider----------------------- */
 
-
-.second-card .data{
-    display: flex;
-    justify-content:space-between;
-    flex-flow: row wrap;
+.second-card .data {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
 }
 
 .second-card .data div {
-    padding-right: 10%;
+  padding-right: 10%;
 }
 
-.second-card .data div:nth-child(1){
-    border-right: solid 1px gray;
+.second-card .data div:nth-child(1) {
+  border-right: solid 1px gray;
 }
-.second-card .data div:nth-child(2){
-    border-right: solid 1px gray;
+.second-card .data div:nth-child(2) {
+  border-right: solid 1px gray;
 }
-
 
 .progress {
-    height: 10px;
+  height: 10px;
+}
+.progress-bar {
+  width: calc(89914 / 100000 * 100%);
+  background-color: hsl(176, 50%, 47%);
+}
+
+.card {
+  padding: 5%;
+  margin: 10px;
+}
+.child-card-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row wrap;
+}
+
+.child-card-header p:nth-child(2) {
+  color: hsl(176, 50%, 47%);
+}
+
+.child-card-header .text {
+  align-items: center;
+  display: inherit;
+}
+
+.child-card-header .text .number {
+  margin-right: 5px;
+}
+
+.modal-content {
+  padding: 5%;
+  display: block;
+  align-items: center;
+}
+
+/* .modal-content div:nth-child(3) {
+  margin: 5%;
+  
+} */
+
+
+
+
+.form-check-input:checked {
+    background-color: hsl(176, 50%, 47%);
+    border-color: hsl(176, 50%, 47%);
 
 }
-.progress-bar{
-    width: calc(89914/100000*100%);
-    background-color:hsl(176, 50%, 47%);
+
+.radio-checked{
+  border: hsl(176, 50%, 47%) 4px solid;
+  border-radius:10px;
 }
-
-
-
-
 
 
 
