@@ -234,11 +234,6 @@ button:hover {
   align-items: center;
 }
 
-/* .modal-content div:nth-child(3) {
-  margin: 5%;
-  
-} */
-
 .form-control{
   width: 80px;
   border-radius: 40px ;
@@ -248,13 +243,18 @@ button:hover {
 .pledge-group{
   border-top: 1px solid lightgray;
   display: flex;
-  justify-content: space-between;
-  flex-direction: row wrap;
+
   padding-top: 20px;
 }
 
-.pledge-group input{
-  margin-right: -100px;
+.pledge-group div{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-grow: 1;
+}
+.pledge-group div input{
+  margin-right: 5px;
 }
 
 .hidden{
@@ -265,8 +265,6 @@ button:hover {
   visibility: visible;
 
 }
-
-
 
 
 .form-check-input:checked {
