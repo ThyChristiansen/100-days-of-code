@@ -239,6 +239,33 @@ button:hover {
   
 } */
 
+.form-control{
+  width: 80px;
+  border-radius: 40px ;
+  
+}
+
+.pledge-group{
+  border-top: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row wrap;
+  padding-top: 20px;
+}
+
+.pledge-group input{
+  margin-right: -100px;
+}
+
+.hidden{
+  visibility: hidden;
+
+}
+.visible{
+  visibility: visible;
+
+}
+
 
 
 
