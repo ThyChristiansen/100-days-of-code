@@ -14,7 +14,10 @@ function App() {
 
 
       <div>Registration closes in  minutes!</div>
+      <div className="display-counter">
       <Timer />
+
+      </div>
 
 
       <div className="attribution">

@@ -45,4 +45,7 @@
   color: hsl(228, 45%, 44%);
 }
 
-
+.display-counter{
+  display: flex;
+  justify-content: center;
+}

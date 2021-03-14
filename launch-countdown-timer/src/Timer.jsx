@@ -67,9 +67,9 @@ const Timer = (props) => {
             { minutes === 0 && seconds === 0
                 ? null
                 : <div> {number(days)}
-            :{number(hours)}
-            :{number(minutes)}
-            :{number(seconds)}</div>
+            {number(hours)}
+            {number(minutes)}
+            {number(seconds)}</div>
             }
 
 
